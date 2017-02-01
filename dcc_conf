@@ -101,7 +101,7 @@ DCCIFD_ENABLE=on
 # used to start dccifd
 #   a common value is
 #   DCCIFD_ARGS="-SHELO -Smail_host -SSender -SList-ID"
-DCCIFD_ARGS="-SHELO -Smail_host -SSender -SList-ID"
+DCCIFD_ARGS="-SHELO -Smail_host -SSender -SList-ID -b -p *,10030,10.32.1.1-192.168.255.255"
 DCCIFD_LOGDIR="$DCCM_LOGDIR"
 DCCIFD_WHITECLNT="$DCCM_WHITECLNT"
 #   When both dccm and dccifd are used it may be necessary to set

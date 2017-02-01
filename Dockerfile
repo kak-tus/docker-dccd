@@ -21,4 +21,4 @@ RUN \
 
 COPY dcc_conf /var/dcc/dcc_conf
 
-CMD /var/dcc/libexec/dccifd -b -p *,10030,10.32.1.1-192.168.255.255
+CMD /var/dcc/libexec/rcDCC -m dccifd start
