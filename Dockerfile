@@ -1,20 +1,21 @@
 FROM debian:8
 
-COPY dcc.tar.Z_SHA256SUMS /dcc.tar.Z_SHA256SUMS
+ENV DCC_VERSION=1.3.159
+COPY dcc-${DCC_VERSION}.tar.Z_SHA256SUMS /dcc-${DCC_VERSION}.tar.Z_SHA256SUMS
 
 RUN \
   apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y curl gcc \
   ca-certificates libc-dev make \
 
-  && curl -L https://www.dcc-servers.net/dcc/source/dcc.tar.Z -o dcc.tar.Z \
-  && sha256sum -c dcc.tar.Z_SHA256SUMS \
-  && zcat dcc.tar.Z | tar xvf - \
-  && cd dcc-1.3.158 \
+  && curl -L https://www.dcc-servers.net/dcc/source/old/dcc-${DCC_VERSION}.tar.Z -o dcc-${DCC_VERSION}.tar.Z \
+  && sha256sum -c dcc-${DCC_VERSION}.tar.Z_SHA256SUMS \
+  && zcat dcc-${DCC_VERSION}.tar.Z | tar xvf - \
+  && cd dcc-${DCC_VERSION} \
   && ./configure --disable-dccm \
   && make install \
-  && rm -rf /dcc-1.3.158 \
-  && rm /dcc.tar.Z /dcc.tar.Z_SHA256SUMS \
+  && rm -rf /dcc-${DCC_VERSION} \
+  && rm /dcc-${DCC_VERSION}.tar.Z /dcc-${DCC_VERSION}.tar.Z_SHA256SUMS \
 
   && apt-get purge -y curl gcc ca-certificates libc-dev make \
   && rm -rf /var/lib/apt/lists/*
