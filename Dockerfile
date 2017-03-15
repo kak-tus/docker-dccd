@@ -22,4 +22,4 @@ RUN \
 
 COPY dcc_conf /var/dcc/dcc_conf
 
-CMD /var/dcc/libexec/rcDCC -m dccifd start
+CMD [ "/var/dcc/libexec/rcDCC", "-m", "dccifd", "start" ]
