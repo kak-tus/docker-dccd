@@ -23,4 +23,4 @@ RUN \
 
 COPY dcc_conf /var/dcc/dcc_conf
 
-CMD [ "/var/dcc/libexec/rcDCC", "-m", "dccifd", "start", ">", "/dev/stdout" ]
+CMD [ "/var/dcc/libexec/rcDCC", "-m", "dccifd", "start" ]
