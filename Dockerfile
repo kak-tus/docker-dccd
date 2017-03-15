@@ -18,7 +18,7 @@ RUN \
   && rm /dcc-${DCC_VERSION}.tar.Z /dcc-${DCC_VERSION}.tar.Z_SHA256SUMS \
 
   && apt-get purge -y curl gcc ca-certificates libc-dev make \
-  && apt-get autoremove \
+  && apt-get -y autoremove \
   && rm -rf /var/lib/apt/lists/*
 
 COPY dcc_conf /var/dcc/dcc_conf
