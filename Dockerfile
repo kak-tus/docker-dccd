@@ -21,5 +21,6 @@ RUN \
   && rm -rf /var/lib/apt/lists/*
 
 COPY dcc_conf /var/dcc/dcc_conf
+COPY start.sh /usr/local/bin/start.sh
 
-CMD [ "/var/dcc/libexec/rcDCC", "-m", "dccifd", "start" ]
+CMD ["/usr/local/bin/start.sh"]
