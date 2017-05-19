@@ -23,4 +23,7 @@ RUN \
 COPY dcc_conf /var/dcc/dcc_conf
 COPY start.sh /usr/local/bin/start.sh
 
+ENV USER_UID=1000
+ENV USER_GID=1000
+
 CMD ["/usr/local/bin/start.sh"]
