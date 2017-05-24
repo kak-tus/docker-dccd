@@ -77,7 +77,7 @@ DCCM_ARGS="-SHELO -Smail_host -SSender -SList-ID"
 #   nightly cron job.  DCCM_LOGDIR can start with D? H? or M? as in
 #   DCCM_LOGDIR='D?log'  See -l in the man page.
 #   Set DCCM_LOGDIR to the empty or null string to disable logging.
-DCCM_LOGDIR="log"
+DCCM_LOGDIR="/var/dcc/log"
 DCCM_WHITECLNT=whiteclnt
 DCCM_USERDIRS=userdirs
 # set DCCM_LOG_AT to a number that determines "bulk mail" for your situation.
