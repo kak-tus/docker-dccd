@@ -1,18 +1,18 @@
 #!/usr/bin/env sh
 
-userdel www-data 2>/dev/null
-groupdel www-data 2>/dev/null
-groupadd -g "$USER_GID" www-data
-useradd -d /home/www-data -g www-data -u "$USER_UID" www-data
+groupadd -g "$USER_GID" user
+useradd -d /home/user -g user -u "$USER_UID" user
 
 # docker permissions fix
 rm -rf /var/dcc/log
 mkdir -p /var/dcc/log
 
-chown -R www-data:www-data /var/dcc
+chown -R user:user /var/dcc
 
 /var/dcc/libexec/rcDCC -m dccifd start &
 child=$!
 
 trap "kill $child" INT TERM
+wait "$child"
+trap - INT TERM
 wait "$child"

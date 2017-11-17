@@ -1,3 +1,5 @@
-# docker-dccd
+# DCCD in docker
 
-For internal usage.
+```
+docker run --rm -it -p 10030:10030 kaktuss/dccd
+```

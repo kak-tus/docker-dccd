@@ -15,7 +15,7 @@ DCC_LIBEXEC=/var/dcc/libexec
 DCC_RUNDIR=/var/run/dcc
 
 # DCC user name
-DCCUID=www-data
+DCCUID=user
 
 
 DCCD_ENABLE=off
