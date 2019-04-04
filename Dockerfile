@@ -1,4 +1,4 @@
-FROM debian:9
+FROM debian:9.8-slim
 
 ENV \
   DCC_VERSION=1.3.163 \

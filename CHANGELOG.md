@@ -1,3 +1,6 @@
+v0.15.2 2018-11-17
+  - Smaller image size.
+
 v0.15.1 2018-11-17
   - Update DCC to 1.3.163.
 
